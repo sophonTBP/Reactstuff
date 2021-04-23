@@ -132,8 +132,179 @@ class MyComponent extends React.Component {
 
 
 
+//da props : 
+
+const CurrentDate = (props) => {
+    return (
+      <div>
+        { /* Change code below this line */ }
+        <p>The current date is:{props.date} </p>
+        { /* Change code above this line */ }
+      </div>
+    );
+  };
+  
+  class Calendar extends React.Component {
+    constructor(props) {
+      super(props);
+    }
+    render() {
+      return (
+        <div>
+          <h3>What date is it?</h3>
+          { /* Change code below this line */ }
+          <CurrentDate date={Date()}/>
+          { /* Change code above this line */ }
+        </div>
+      );
+    }
+  };
 
 
+
+
+
+///more props
+const List = (props) => {
+    { /* Change code below this line */ }
+    return <p>{props.tasks.join(", ")}</p>
+    { /* Change code above this line */ }
+  };
+  
+  class ToDo extends React.Component {
+    constructor(props) {
+      super(props);
+    }
+    render() {
+      return (
+        <div>
+          <h1>To Do Lists</h1>
+          <h2>Today</h2>
+          { /* Change code below this line */ }
+          <List tasks={["walk dog", "workout"]} />
+          <h2>Tomorrow</h2>
+          <List tasks={["walk dog","read", "workout"]}/>
+          { /* Change code above this line */ }
+        </div>
+      );
+    }
+  };
+
+
+
+
+
+  //default props
+
+  const ShoppingCart = (props) => {
+    return (
+      <div>
+        <h1>Shopping Cart Component</h1>
+      </div>
+    )
+  };
+  // Change code below this line
+  ShoppingCart.defaultProps = {
+    items:0
+  }
+
+
+
+
+
+
+
+
+
+
+  //override default prop by setting it
+
+
+
+  const Items = (props) => {
+    return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>
+  }
+  
+  Items.defaultProps = {
+    quantity: 0
+  }
+  
+  class ShoppingCart extends React.Component {
+    constructor(props) {
+      super(props);
+    }
+    render() {
+      { /* Change code below this line */ }
+      return <Items quantity={10}/>
+      { /* Change code above this line */ }
+    }
+  };
+
+// PropTypes : checks for type (ex:.number)checks for presence (.isRequired)
+
+const Items = (props) => {
+    return <h1>Current Quantity of Items in Cart: {props.quantity}</h1>
+  };
+  
+  // Change code below this line
+  Items.propTypes = {quantity: PropTypes.number.isRequired}
+  // Change code above this line
+  
+  Items.defaultProps = {
+    quantity: 0
+  };
+  
+  class ShoppingCart extends React.Component {
+    constructor(props) {
+      super(props);
+    }
+    render() {
+      return <Items />
+    }
+  };
+
+
+// ES6 Class stuff feat : "this."
+
+
+class ReturnTempPassword extends React.Component {
+    constructor(props) {
+      super(props);
+  
+    }
+    render() {
+      return (
+          <div>
+              { /* Change code below this line */ }
+              <p>Your temporary password is: <strong>{this.props.tempPassword}</strong></p>
+              { /* Change code above this line */ }
+          </div>
+      );
+    }
+  };
+  
+  class ResetPassword extends React.Component {
+    constructor(props) {
+      super(props);
+  
+    }
+    render() {
+      return (
+          <div>
+            <h2>Reset Password</h2>
+            <h3>We've generated a new temporary password for you.</h3>
+            <h3>Please reset this password from your account settings ASAP.</h3>
+            { /* Change code below this line */ }
+  <ReturnTempPassword  tempPassword =  {"trustNoOne"}/>
+            { /* Change code above this line */ }
+          </div>
+      );
+    }
+  };
+
+
+
+//continue from : https://www.freecodecamp.org/learn/front-end-libraries/react/review-using-props-with-stateless-functional-components
 
 
 
