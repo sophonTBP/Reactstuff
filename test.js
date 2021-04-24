@@ -307,6 +307,207 @@ class ReturnTempPassword extends React.Component {
 //continue from : https://www.freecodecamp.org/learn/front-end-libraries/react/review-using-props-with-stateless-functional-components
 
 
+class CampSite extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <Camper/>
+      </div>
+    );
+  }
+};
+// Change code below this line
+const Camper = (props)=>{
+  return <div><span>Hello <p>{props.name}</p></span></div>
+}
+
+Camper.defaultProps = {
+    name: 'CamperBot'  };
+Camper.propTypes ={
+  name : PropTypes.string.isRequired
+}    
+
+
+
+
+
+//React button with import ;
+
+
+
+
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: 'Initial State'
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick() {
+    // Change code below this line
+this.setState({
+  name:"React Rocks!"
+})
+    // Change code above this line
+  }
+  render() {
+    return (
+      <div>
+        <button onClick={this.handleClick}>Click Me</button>
+        <h1>{this.state.name}</h1>
+      </div>
+    );
+  }
+};
+
+
+
+
+
+//Use State to Toggle an Element with a effin ternary op: b please!
+
+
+
+
+
+
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      visibility: false
+    };
+    // Change code below this line
+this.toggleVisibility = this.toggleVisibility.bind(this)
+    // Change code above this line
+  }
+  // Change code below this line
+toggleVisibility(){ (this.state.visibility === true)
+ ? this.setState(state=>({
+   visibility : false}))
+ : this.setState(state=>({visibility : true}))
+
+}
+
+  // Change code above this line
+  render() {
+    if (this.state.visibility) {
+      return (
+        <div>
+          <button onClick={this.toggleVisibility}>Click Me</button>
+          <h1>Now you see me!</h1>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <button onClick={this.toggleVisibility}>Click Me</button>
+        </div>
+      );
+    }
+  }
+}
+
+
+
+
+///counter with Reset, Increment and Decrement
+
+
+
+
+class Counter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0
+    };
+    // Change code below this line
+this.increment = this.increment.bind(this)
+this.decrement = this.decrement.bind(this)
+this.reset = this.reset.bind(this)
+    // Change code above this line
+  }
+  // Change code below this line
+increment(){
+this.setState(state=>({
+   count : state.count+1}))
+}
+decrement(){
+this.setState(state=>({
+   count : state.count-1}))
+}
+
+reset(){
+this.setState(state=>({
+   count : 0}))
+}
+
+
+  // Change code above this line
+  render() {
+    return (
+      <div>
+        <button className='inc' onClick={this.increment}>Increment!</button>
+        <button className='dec' onClick={this.decrement}>Decrement!</button>
+        <button className='reset' onClick={this.reset}>Reset</button>
+        <h1>Current Count: {this.state.count}</h1>
+      </div>
+    );
+  }
+};
+
+
+
+// react input field with output div
+// hints : https://forum.freecodecamp.org/t/freecodecamp-challenge-guide-create-a-controlled-input/301385
+
+
+
+
+class ControlledInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      input: ''
+    };
+    // Change code below this line
+this.handleChange=this.handleChange.bind(this)
+    // Change code above this line
+  }
+  // Change code below this line
+
+handleChange(event) {
+    this.setState({
+      input: event.target.value
+    });
+}
+  // Change code above this line
+  render() {
+    return (
+      <div>
+        { /* Change code below this line */}
+<input value = {this.state.input} onChange = {this.handleChange}/>
+        { /* Change code above this line */}
+        <h4>Controlled Input:</h4>
+        <p>{this.state.input}</p>
+      </div>
+    );
+  }
+};
+//last exo
+// https://www.freecodecamp.org/learn/front-end-libraries/react/create-a-controlled-form
+
+
+
+
+
+
+
 
 
 
