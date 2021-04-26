@@ -521,11 +521,11 @@ class MyForm extends React.Component {
   }
   handleSubmit(event) {
     // Change code below this line
+  event.preventDefault()
     this.setState({
-submit: this.state.input
+      submit: this.state.input
     });
-event.preventDefault()
-
+    
     // Change code above this line
   }
   render() {
@@ -533,12 +533,12 @@ event.preventDefault()
       <div>
         <form onSubmit={this.handleSubmit}>
           {/* Change code below this line */}
-<input value = {this.state.input} onChange = {this.handleChange}/>
+          <input value = {this.state.input} onChange = {this.handleChange}/>
           {/* Change code above this line */}
           <button type='submit'>Submit!</button>
         </form>
         {/* Change code below this line */}
-<h1>{this.state.submit}</h1>
+        <h1>{this.state.submit}</h1>
         {/* Change code above this line */}
       </div>
     );
@@ -579,6 +579,40 @@ class Navbar extends React.Component {
     );
   }
 };
+
+
+
+//Pass a Callback as Props
+class MyApp extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      inputValue: ''
+    }
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(event) {
+    this.setState({
+      inputValue: event.target.value
+    });
+  }
+  render() {
+    return (
+       <div>
+        { /* Change code below this line */ }
+<GetInput input ={this.state.inputValue}
+      handleChange ={this.handleChange}    
+/>
+
+<RenderInput input={this.state.inputValue}
+ />
+        { /* Change code above this line */ }
+       </div>
+    );
+  }
+};
+
+//continue from : https://www.freecodecamp.org/learn/front-end-libraries/react/add-event-listeners
 
 
 
