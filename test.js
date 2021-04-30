@@ -714,7 +714,10 @@ class MyComponent extends React.Component {
 
 
 
-// shouldComponentUpdate, perf optimisation by prevent rerendering all the time
+
+
+
+//////////////shouldComponentUpdate, perf optimisation by preventing from rerendering all the time
 
 class OnlyEvens extends React.Component {
   constructor(props) {
@@ -763,7 +766,15 @@ class Controller extends React.Component {
   }
 }
 
-///// React inline style
+
+
+
+
+
+
+
+
+///////////////////////////////React inline style
 class Colorful extends React.Component {
   render() {
     return (
@@ -793,6 +804,13 @@ class Colorful extends React.Component {
     // Change code above this line
   }
 };
+
+
+
+
+
+
+
 
 
 
@@ -877,6 +895,17 @@ class MagicEightBall extends React.Component {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 ///Toggle div visibility
 
 class MyComponent extends React.Component {
@@ -911,7 +940,6 @@ if(this.state.display){
 };
 
 
-
 //same but Better
 class MyComponent extends React.Component {
   constructor(props) {
@@ -936,6 +964,19 @@ class MyComponent extends React.Component {
     );
   }
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ////#beer you shall not pass
 
